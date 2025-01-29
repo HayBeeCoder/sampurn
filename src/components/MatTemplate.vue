@@ -22,14 +22,14 @@ const props = defineProps<{
   background-repeat: no-repeat;
   /* background-position: 100% 100%; */
   background-size: 100% 100%;
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
 .mat-heading {
   color: #493a31;
   font-size: 2rem;
-  
+
   margin: 1rem 1rem 2rem;
 }
 
@@ -48,6 +48,9 @@ const props = defineProps<{
 @media (min-width: 369px) {
 }
 @media (min-width: 768px) {
+  .mat{
+    padding: 4rem 6rem;
+  }
 }
 
 @media (min-width: 969px) {
