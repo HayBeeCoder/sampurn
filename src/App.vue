@@ -22,9 +22,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 header {
+  position: absolute;
+  width: 100vw;
+
   line-height: 1.5;
   max-height: 100vh;
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
 
 }
 
@@ -36,7 +39,7 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  
+
 }
 
 nav a.router-link-exact-active.path {
