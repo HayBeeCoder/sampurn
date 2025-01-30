@@ -43,6 +43,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
+  position: relative;
   /* min-height: 800vh; */
 }
 
@@ -135,8 +136,9 @@ body {
     font-size: 16px;
   }
   body {
-    background-image: url('./assets/sampurn-temple.png');
+    /* background-image: url('./assets/sampurn-temple.png'); */
     background-repeat: no-repeat;
-    background-position: 5% 5%;
+    /* background-position: 5% 5%; */
+    background-size: 50%;
   }
 }

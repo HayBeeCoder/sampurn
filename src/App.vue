@@ -1,19 +1,29 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import HamBurger from './components/HamBurger.vue'
+
+import { ref } from 'vue'
+
+const isOpen = ref<boolean>(false)
+
+function toggleisOpen() {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
   <header>
     <RouterLink to="/" class="logo-wrapper">
-
-      <img alt="Sampurn logo" class="logo" src="@/assets/sampurn-logo.png" width="140px"/>
+      <img alt="Sampurn logo" class="logo" src="@/assets/sampurn-logo.png" width="140px" />
     </RouterLink>
 
-    <nav>
+    <HamBurger :toggleState="isOpen" v-on:update:toggleState="toggleisOpen()" />
+
+    <nav :class="{ close: !isOpen }">
       <RouterLink to="/" class="path">Home</RouterLink>
-      <RouterLink to="#about" >About Us</RouterLink>
+      <RouterLink to="#about">About Us</RouterLink>
       <RouterLink to="/course" class="path">Course</RouterLink>
-      <RouterLink to="#faq" >FAQs</RouterLink>
+      <RouterLink to="#faq">FAQs</RouterLink>
     </nav>
   </header>
 
@@ -22,13 +32,18 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 header {
+  z-index: 1000;
   position: absolute;
-  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
 
   line-height: 1.5;
   max-height: 100vh;
   padding: 1rem 1rem;
 
+  border-bottom: 1px solid #ff7200;
 }
 
 .logo {
@@ -36,14 +51,34 @@ header {
 }
 
 nav {
-  width: 100%;
+  top: 100%;
+  width: 25vw;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   text-align: center;
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+  border-left: 1px solid #ff7200;
+  border-right: 1px solid #ff7200;
+  transform-origin: top;
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+  transition: transform 0.4s ease-in-out;
+  z-index: 100;
+}
 
+nav.close {
+  opacity: 0;
+  transform: scaleY(0) translateY(-100%);
+  transition: transform 0.4s ease-in-out;
 }
 
 nav a.router-link-exact-active.path {
   color: red;
+  border-bottom: 1px solid #ff7200;
 }
 
 nav a.router-link-exact-active:hover {
@@ -52,43 +87,54 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0.3rem;
+
+  border-bottom: 1px solid #ff7200;
+
   color: var(--cream);
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500
+  font-weight: 500;
 
   /* border-left: 1px solid var(--color-border); */
 }
 
-nav a:first-of-type {
-  border: 0;
+nav a:last-child {
+  border-bottom: 0;
 }
+
+/* nav a:first-of-type {
+  border: 0;
+} */
 
 @media (min-width: 900px) {
   header {
+    width: 100%;
     display: flex;
-    padding-top: 2rem;
+    /* padding-top: 0.8rem; */
+    /* padding-bottom: 0.6rem; */
     /* place-items: center; */
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #FF7200;
     /* padding-right: calc(var(--section-gap) / 2); */
-
   }
 
   .logo {
     /* margin: 0 2rem 0 0; */
   }
 
-
   nav {
+    position: relative;
     text-align: right;
     /* margin-left: -1rem; */
     font-size: 1rem;
 
     /* padding: 1rem 0; */
     /* margin-top: 1rem; */
+  }
+
+  nav a {
+    padding: 0 1rem;
   }
 }
 </style>
