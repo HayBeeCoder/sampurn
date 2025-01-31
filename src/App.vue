@@ -89,7 +89,7 @@ nav {
   transform: scaleY(1) translateY(0);
   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
   z-index: 100;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.6);
 }
 
 nav.close {
