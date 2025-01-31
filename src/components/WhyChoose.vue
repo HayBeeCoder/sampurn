@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import MatTemplate from './MatTemplate.vue';
+import TheButton from './TheButton.vue';
 
 type whyChooseUsItemType = {
   image?: string
@@ -39,6 +40,7 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
         <p class="ancient-text" v-html="item.desc"></p>
       </div>
     </div>
+    <TheButton>Enrol now</TheButton>
   </MatTemplate>
 
 </template>
