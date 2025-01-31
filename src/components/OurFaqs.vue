@@ -69,7 +69,7 @@ function onClickFaq(faqNumber: number) {
 </script>
 
 <template>
-  <MatTemplate heading="FAQs">
+  <MatTemplate heading="FAQs" id="faq">
     <ul class="faq-list">
       <li v-for="(item, key) in Faqs" :key="key">
         <FaqItem

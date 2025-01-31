@@ -2,11 +2,12 @@
 const props = defineProps<{
   subHeading?: string
   heading?: string
+  id?: "faq" | "about"
 }>()
 </script>
 
 <template>
-  <section class="mat">
+  <section class="mat" :id="id">
     <h1 class="mat-heading amarante-regular" v-if="props.heading">{{ props.heading }}</h1>
     <h3 class="mat-subheading" v-if="props.subHeading">{{ props.subHeading }}</h3>
 

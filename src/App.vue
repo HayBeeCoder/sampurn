@@ -2,12 +2,18 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HamBurger from './components/HamBurger.vue'
 
-import { ref } from 'vue'
+import { ref,  } from 'vue'
 
 const isOpen = ref<boolean>(false)
 
 function toggleisOpen() {
   isOpen.value = !isOpen.value
+}
+
+// Using scrollIntoView() function to achieve the scrolling
+function scrollTo(idOfElement: string) {
+  const element = document.getElementById(idOfElement)
+  element?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
@@ -21,9 +27,9 @@ function toggleisOpen() {
 
     <nav :class="{ close: !isOpen }">
       <RouterLink to="/" class="path">Home</RouterLink>
-      <RouterLink to="#about">About Us</RouterLink>
-      <RouterLink to="/course" class="path">Course</RouterLink>
-      <RouterLink to="#faq">FAQs</RouterLink>
+      <RouterLink to="/#about" v-on:click="scrollTo('about')">About Us</RouterLink>
+      <RouterLink to="/" class="path" >Course</RouterLink>
+      <RouterLink to="/#faq" v-on:click="scrollTo('faq')">FAQs</RouterLink>
     </nav>
   </header>
 
@@ -78,7 +84,7 @@ nav.close {
 
 nav a.router-link-exact-active.path {
   color: red;
-  border-bottom: 1px solid #ff7200;
+
 }
 
 nav a.router-link-exact-active:hover {
@@ -107,6 +113,28 @@ nav a:last-child {
   border: 0;
 } */
 
+@media (min-width: 769px) {
+  nav {
+    position: relative;
+    opacity: 1;
+    transform: translate(0);
+    flex-direction: row;
+    width: auto;
+    max-width: none;
+    border: 0
+    /* display: none; */
+  }
+
+  nav a{
+    border: 0px;
+  }
+
+  nav.close{
+    transform: translate(0);
+    opacity: 1
+  }
+}
+
 @media (min-width: 900px) {
   header {
     width: 100%;
@@ -116,6 +144,8 @@ nav a:last-child {
     /* place-items: center; */
     justify-content: space-between;
     align-items: center;
+
+
     /* padding-right: calc(var(--section-gap) / 2); */
   }
 
