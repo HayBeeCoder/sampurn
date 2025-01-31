@@ -32,8 +32,36 @@ import GreatScroll from "@/components/GreatScroll.vue"
 .non-hero-wrapper {
   position: relative;
   padding: 75px 0;
-  background-color: black;
+  /* background: rgb(27, 27, 31); */
+
   overflow-x: hidden;
+
+
+
+  background: linear-gradient(-90deg,
+  hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.4) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+    );
+
+  background: -moz-linear-gradient(-90deg,
+      hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.4) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+      );
+      
+      background: -webkit-linear-gradient(-90deg,
+      hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.6) 70%, */
+      /* hsla(0, 0%, 0%, 0.6) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+    );
+padding-bottom: 300px;
+    
+
 }
 
 .non-hero-wrapper section {
@@ -58,8 +86,8 @@ import GreatScroll from "@/components/GreatScroll.vue"
 
 }
 
-@media (min-width: 469px){
-  .great-scroll-wrapper{
+@media (min-width: 469px) {
+  .great-scroll-wrapper {
     width: 400px;
   }
 }
@@ -67,8 +95,30 @@ import GreatScroll from "@/components/GreatScroll.vue"
 @media (min-width: 979px) {
   .non-hero-wrapper {
     padding: 155px 0;
+    
+  background: linear-gradient(-90deg,
+  hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.4) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+    );
+
+  background: -moz-linear-gradient(-90deg,
+      hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.4) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+      );
+      
+      background: -webkit-linear-gradient(-90deg,
+      hsla(0, 0%, 0%, 1) 0%,
+      hsla(0, 0%, 0%, 1) 80%,
+      /* hsla(0, 0%, 0%, 0.6) 70%, */
+      /* hsla(0, 0%, 0%, 0.6) 80%, */
+      hsla(0, 0%, 0%, 0.5) 95%
+    );
   }
-  
+
   .non-hero-wrapper section {
     margin-bottom: 105px
   }
@@ -76,12 +126,12 @@ import GreatScroll from "@/components/GreatScroll.vue"
 
 
 
-@media ( min-width: 969px){
-  .great-scroll-wrapper{
+@media (min-width: 969px) {
+  .great-scroll-wrapper {
     right: -1%;
     width: 600px;
-    transform: rotate(45deg) translate(10%,-40%);
+    transform: rotate(45deg) translate(10%, -40%);
 
-    }
+  }
 }
 </style>

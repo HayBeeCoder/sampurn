@@ -34,6 +34,11 @@ function scrollTo(idOfElement: string) {
   </header>
 
   <RouterView />
+  <footer>
+    <p>
+      © Sampurn 2025 ®
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -50,6 +55,14 @@ header {
   padding: 1rem 1rem;
 
   border-bottom: 1px solid #ff7200;
+}
+
+footer{
+  padding: 1rem 1rem;
+  text-align: center;
+  border-top: 1px solid #ff7200;
+  color: #ff7200;
+  background-color: rgba(0,0,0,0.6);
 }
 
 .logo {
@@ -85,7 +98,7 @@ nav.close {
 }
 
 nav a.router-link-exact-active.path {
-  color: red;
+  color: #ff7200;
 
 }
 
