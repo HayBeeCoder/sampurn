@@ -104,6 +104,8 @@ nav a {
   text-transform: uppercase;
   font-weight: 500;
 
+  font-size: 0.9rem;
+
   /* border-left: 1px solid var(--color-border); */
 }
 
