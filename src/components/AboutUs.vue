@@ -3,7 +3,7 @@ import MatTemplate from './MatTemplate.vue'
 </script>
 
 <template>
-  <MatTemplate subHeading="Our Mission and Vision" heading="About Us">
+  <MatTemplate subHeading="Our Mission and Vision" heading="About Us" id="about">
     <p class="mat-essay">
       At Sampurn, our mission is to empower aspiring and experienced traders to achieve financial
       independence through a deep understanding of Financial markets.<br /><br />

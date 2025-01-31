@@ -86,4 +86,10 @@ function updateToggleState() {
   width: 100%;
   transform: translateY(-50%) rotateZ(135deg);
 }
+
+@media (min-width: 769px){
+  .hamburger{
+    display: none;
+  }
+}
 </style>
