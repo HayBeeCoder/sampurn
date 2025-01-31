@@ -88,7 +88,7 @@ padding-bottom: 300px;
   width: 200px;
   z-index: 500;
   /* top: 5%; */
-  transform: rotate(45deg) translateX(0%);
+  transform: rotate(45deg) translateX(0%) scale(120%);
   right: -15%;
   /* overflow-x: hidden; */
 
