@@ -57,8 +57,9 @@ body {
   background-image: url('./assets/sampurn-temple.png');
   background-repeat: repeat-y;
 
-  background-position: top center;
+  background-position: top left 45%;
   background-size: 120% auto;
+
 
   font-family: 'Montserrat', serif;
   font-optical-sizing: auto;
