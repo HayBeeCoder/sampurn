@@ -87,14 +87,15 @@ nav {
   transform-origin: top;
   opacity: 1;
   transform: scaleY(1) translateY(0);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
   z-index: 100;
+  background-color: rgba(0,0,0,0.3);
 }
 
 nav.close {
   opacity: 0;
-  transform: scaleY(0) translateY(-100%);
-  transition: transform 0.4s ease-in-out;
+  transform: scaleY(0) translateY(-100%), ;
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 nav a.router-link-exact-active.path {
