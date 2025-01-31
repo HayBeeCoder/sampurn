@@ -5,7 +5,7 @@ import TheButton from "@/components/TheButton.vue"
 <template>
   <section class="hero-gradient wrapper">
     <img src="@/assets/sampurn-logo.png" alt="Sampurn's logo" class="hero-logo" />
-    <p class="hero-tagline">Master Trading: Your Journey to Financial Journey starts here</p>
+    <p class="hero-tagline">Master Trading: Your Journey to Financial Freedom starts here</p>
     <TheButton>Enrol Now</TheButton>
   </section>
 </template>
