@@ -30,6 +30,7 @@
   font-size: 1.4rem;
 }
 .wrapper {
+  overflow-x: hidden;
   min-height: 100vh;
   /* background: purple; */
   display: flex;
