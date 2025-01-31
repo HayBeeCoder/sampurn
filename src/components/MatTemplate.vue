@@ -17,16 +17,17 @@ const props = defineProps<{
 
 <style>
 .mat {
-  width: 95vw;
+  width: 98vw;
   margin: 0 auto;
   background-image: url('@/assets/dark-brown-paper.png');
   background-repeat: no-repeat;
   /* background-position: 100% 100%; */
   background-size: 100% 100%;
-  padding: 5rem 1.5rem;
+  padding: 5rem 0.2em;
+  
   text-align: center;
   position: relative;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 .mat-heading {

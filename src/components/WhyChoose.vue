@@ -1,41 +1,42 @@
 <script lang="ts" setup>
 import MatTemplate from './MatTemplate.vue';
-import GreatScroll from "./GreatScroll.vue"
 
 type whyChooseUsItemType = {
-  image: string
+  image?: string
   desc: string
 }
 const whyChooseUsItems: whyChooseUsItemType[] = [
   {
-    image: '',
-    desc: 'Expert Led Courses',
+    image: new URL(`../assets/book.png`, import.meta.url).href,
+
+    desc: 'Expert Led <br/> Courses',
   },
   {
-    image: '',
-    desc: 'Expert Led Courses',
+    image: new URL(`../assets/camcorder.png`, import.meta.url).href,
+    desc: 'Live Mentorship <br/> Sessions',
   },
   {
-    image: '',
-    desc: 'Expert Led Courses',
+    image: new URL(`../assets/book.png`, import.meta.url).href,
+
+    desc: 'Expert Led <br/> Courses',
   },
   {
-    image: '',
-    desc: 'Expert Led Courses',
+    image: new URL(`../assets/camcorder.png`, import.meta.url).href,
+    desc: 'Live Mentorship <br/> Sessions',
   },
+
 ]
 </script>
 
 <template>
   <MatTemplate subHeading="Why Choose Us">
-    <div class="great-scroll-wrapper">
-
-      <GreatScroll />
-    </div>
+  
     <div class="ancient-papers auto-grid">
       <div :key="key" v-for="(item, key) in whyChooseUsItems" class="ancient-paper">
-        <span class="ancient-icon-wrapper"></span>
-        <p class="ancient-text">{{ item.desc }}</p>
+        <span class="ancient-icon-wrapper">
+          <img :src="item.image" class="icon" />
+        </span>
+        <p class="ancient-text" v-html="item.desc"></p>
       </div>
     </div>
   </MatTemplate>
@@ -45,15 +46,17 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
 <style scoped>
 .ancient-text {
   font-size: 0.8rem;
+  font-weight: 700;
+  color: #493A31;
 }
 
-.great-scroll-wrapper {
-  position: absolute;
-  transform: translateX(50%);
-  width: 400px;
-  transform: rotate(45deg) translateX(40%);
-  top: -15%;
+.auto-grid {
+  display: grid;
+  gap: 40px
 }
+
+
+
 
 .ancient-paper {
   display: flex;
@@ -71,11 +74,15 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
 }
 
 .ancient-icon-wrapper {
-  display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 200px;
-  background: purple;
+  display: inline-block;
+  /* width: 100px; */
+  /* height: 100px; */
+  /* border-radius: 200px; */
+  /* background: purple; */
+}
+
+.icon {
+  width: 90px;
 }
 
 
@@ -100,13 +107,7 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
     grid-template-columns: repeat(2, minmax(var(--auto-grid-min-size), 1fr));
     grid-gap: 1rem;
   }
-  .great-scroll-wrapper {
-  position: absolute;
-  transform: translateX(50%);
-  width: 400px;
-  left: 100%;
-  transform: rotate(45deg) translateX(-95%);
-  top: 5%;
-}
+
+  
 }
 </style>
