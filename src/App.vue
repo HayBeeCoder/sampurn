@@ -60,8 +60,8 @@ header {
 
 nav {
   top: 100%;
-  width: 25vw;
-  max-width: 300px;
+  width: 30vw;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -95,7 +95,7 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0.3rem;
+  padding: 0.8em 0.5em;
 
   border-bottom: 1px solid #ff7200;
 
@@ -104,7 +104,7 @@ nav a {
   text-transform: uppercase;
   font-weight: 500;
 
-  font-size: 0.9rem;
+  font-size: 1rem;
 
   /* border-left: 1px solid var(--color-border); */
 }
