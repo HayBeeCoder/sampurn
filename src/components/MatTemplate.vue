@@ -23,7 +23,7 @@ const props = defineProps<{
   background-repeat: no-repeat;
   /* background-position: 100% 100%; */
   background-size: 100% 100%;
-  padding: 5rem 0.2em;
+  padding: 5rem 2em;
   
   text-align: center;
   position: relative;
