@@ -1,6 +1,6 @@
 <template>
 
-    <button class="btn hero-btn btn-default-font yellow-orange-gradient">
+    <button class="btn hero-btn btn-default-font yellow-orange-gradient shiny">
         <p class="btn-mask-gradient">
             <slot></slot>
         </p>
