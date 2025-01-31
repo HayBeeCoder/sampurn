@@ -33,15 +33,19 @@ const updateValue = (faqId: number) => {
   gap: 6px;
   padding: 1rem 1.2rem;
   color: #493a31;
-  background: #eaca91;
-  background-image: url('');
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background: transparent;
+  background-image:   url("../assets/ribbon.png");
+  background-origin: top left;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
   font-weight: 600;
+  height: max-content;
 }
 
 .faq-details {
-  background: #eaca91;
+  background-image:   url("../assets/ribbon.png");
+  background-repeat: repeat-y;
+  background-size: 100%;
 }
 
 .faq-item span {

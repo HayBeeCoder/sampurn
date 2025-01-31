@@ -106,7 +106,10 @@ function onClickFaq(faqNumber: number) {
 
 .faq-details {
   text-align: justify;
-  background: #eaca91;
+  /* background: #eaca91; */
+  background-image:   url("../assets/ribbon.png");
+  background-size: 100%;
+  background-repeat: repeat-y;
   padding: 0rem 1.2rem 1rem;
 
   font-size: 0.8rem;
