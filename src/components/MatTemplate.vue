@@ -23,9 +23,10 @@ const props = defineProps<{
   background-repeat: no-repeat;
   /* background-position: 100% 100%; */
   background-size: 100% 100%;
-  padding: 7rem 2rem;
+  padding: 5rem 1.5rem;
   text-align: center;
-  position: relative
+  position: relative;
+  letter-spacing: 0.05em;
 }
 
 .mat-heading {
@@ -43,7 +44,7 @@ const props = defineProps<{
 
 .mat-essay {
   color: #d9d9d9;
-  text-align: justify;
+  text-align: center;
   font-size: 0.8rem;
 }
 
