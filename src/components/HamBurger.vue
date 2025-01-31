@@ -46,7 +46,9 @@ function updateToggleState() {
   position: absolute;
   right: 0;
   width: 100%;
-  height: 0.075em;
+  /* height: 0.005em; */
+  /* height: 0.075em; */
+  height: 1px;
   border-radius: 0.125em;
   background: #ff7200;
   transition: inherit;

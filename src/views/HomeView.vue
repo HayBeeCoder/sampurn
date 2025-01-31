@@ -47,25 +47,25 @@ border: 0px;
 
 
   background: linear-gradient(-90deg,
-  hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+  hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.4) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
     );
 
   background: -moz-linear-gradient(-90deg,
-      hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+      hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.4) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
       );
       
       background: -webkit-linear-gradient(-90deg,
-      hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+      hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.6) 70%, */
       /* hsla(0, 0%, 0%, 0.6) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
     );
 padding-bottom: 300px;
     
@@ -102,28 +102,29 @@ padding-bottom: 300px;
 
 @media (min-width: 979px) {
   .non-hero-wrapper {
+    /* max-width: 1500px; */
     padding: 155px 0;
     
   background: linear-gradient(-90deg,
-  hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+  hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.4) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
     );
 
   background: -moz-linear-gradient(-90deg,
-      hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+      hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.4) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
       );
       
       background: -webkit-linear-gradient(-90deg,
-      hsla(0, 0%, 0%, 1) 0%,
-      hsla(0, 0%, 0%, 1) 80%,
+      hsla(0, 0%, 4%, 1) 0%,
+      hsla(0, 0%, 4%, 1) 80%,
       /* hsla(0, 0%, 0%, 0.6) 70%, */
       /* hsla(0, 0%, 0%, 0.6) 80%, */
-      hsla(0, 0%, 0%, 0.5) 95%
+      hsla(0, 0%, 4%, 0.5) 95%
     );
   }
 
