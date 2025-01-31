@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import MatTemplate from './MatTemplate.vue';
+import GreatScroll from "./GreatScroll.vue"
 
 type whyChooseUsItemType = {
   image: string
@@ -26,10 +27,12 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
 </script>
 
 <template>
-  <MatTemplate  subHeading="Why Choose Us">
+  <MatTemplate subHeading="Why Choose Us">
+    <div class="great-scroll-wrapper">
 
-
-<div class="ancient-papers auto-grid">
+      <GreatScroll />
+    </div>
+    <div class="ancient-papers auto-grid">
       <div :key="key" v-for="(item, key) in whyChooseUsItems" class="ancient-paper">
         <span class="ancient-icon-wrapper"></span>
         <p class="ancient-text">{{ item.desc }}</p>
@@ -40,12 +43,19 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
 </template>
 
 <style scoped>
-
-
-.ancient-text{
+.ancient-text {
   font-size: 0.8rem;
 }
-.ancient-paper{
+
+.great-scroll-wrapper {
+  position: absolute;
+  transform: translateX(50%);
+  width: 400px;
+  transform: rotate(45deg) translateX(40%);
+  top: -15%;
+}
+
+.ancient-paper {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -59,6 +69,7 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
   /* background: orange; */
   aspect-ratio: 16/14;
 }
+
 .ancient-icon-wrapper {
   display: block;
   width: 100px;
@@ -69,10 +80,9 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
 
 
 
-@media (min-width: 369px) {
-}
-@media (min-width: 768px) {
-}
+@media (min-width: 369px) {}
+
+@media (min-width: 768px) {}
 
 @media (min-width: 969px) {
 
@@ -82,12 +92,13 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
     /* max-width: 1000px;
     margin: 0 auto; */
   }
-  .auto-grid {
-  --auto-grid-min-size: 16rem;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 1rem;
-}
+  .auto-grid {
+    --auto-grid-min-size: 16rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(var(--auto-grid-min-size), 1fr));
+    grid-gap: 1rem;
+  }
 }
 </style>
