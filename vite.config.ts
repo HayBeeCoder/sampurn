@@ -15,4 +15,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    allowedHosts: ["5173-haybeecoder-sampurn-lub4m4j3t5y.ws-eu117.gitpod.io"]
+  }
 })

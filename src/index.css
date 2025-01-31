@@ -15,6 +15,27 @@ html {
   font-size: 15px;
 }
 
+.disabled-link {
+  pointer-events: none;
+  position: relative;
+  opacity: 0.7;
+  color: grey;
+}
+
+/* .disabled-link::after{
+
+  width: min-content;
+  padding: 1px;
+  content: 'coming soon!';
+  position: absolute;
+  font-size: 0.45em;
+  background: white;
+  font-weight: 700;
+  top: 20%;
+  left: -2%;
+  transform: rotate(-75deg);
+} */
+
 ul {
   list-style-type: none;
 }
@@ -141,4 +162,13 @@ body {
     /* background-position: 5% 5%; */
     background-size: 50%;
   }
+  
+/* .disabled-link::after{
+  
+ font-size: 0.5em;
+  top: -60%;
+  left: 10%;
+
+  transform: rotate(-5deg);
+} */
 }

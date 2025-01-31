@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HamBurger from './components/HamBurger.vue'
 
-import { ref,  } from 'vue'
+import { ref, } from 'vue'
 
 const isOpen = ref<boolean>(false)
 
@@ -28,7 +28,7 @@ function scrollTo(idOfElement: string) {
     <nav :class="{ close: !isOpen }">
       <RouterLink to="/" class="path">Home</RouterLink>
       <RouterLink to="/#about" v-on:click="scrollTo('about')">About Us</RouterLink>
-      <RouterLink to="/" class="path" >Course</RouterLink>
+      <RouterLink to="/course" class="path disabled-link">Course</RouterLink>
       <RouterLink to="/#faq" v-on:click="scrollTo('faq')">FAQs</RouterLink>
     </nav>
   </header>
@@ -55,6 +55,8 @@ header {
 .logo {
   display: block;
 }
+
+
 
 nav {
   top: 100%;
@@ -97,12 +99,17 @@ nav a {
 
   border-bottom: 1px solid #ff7200;
 
-  color: var(--cream);
+
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
 
   /* border-left: 1px solid var(--color-border); */
+}
+
+nav a:not(.disabled-link) {
+  color: var(--cream);
+
 }
 
 nav a:last-child {
@@ -122,14 +129,14 @@ nav a:last-child {
     width: auto;
     max-width: none;
     border: 0
-    /* display: none; */
+      /* display: none; */
   }
 
-  nav a{
+  nav a {
     border: 0px;
   }
 
-  nav.close{
+  nav.close {
     transform: translate(0);
     opacity: 1
   }
