@@ -53,7 +53,6 @@ button {
 }
 
 body {
-  width: 100vw;
   background: rgb(27, 27, 31);
   background-image: url('./assets/sampurn-temple.png');
   background-repeat: repeat-y;

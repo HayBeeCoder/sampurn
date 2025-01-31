@@ -13,11 +13,11 @@ import GreatScroll from "@/components/GreatScroll.vue"
     <div class="non-hero-wrapper">
 
       <AboutUs />
-     
+
       <WhyChoose />
       <OurFaqs />
     </div>
-    <!-- <TheWelcome /> -->
+     <!-- <TheWelcome /> -->
   </main>
 </template>
 
@@ -26,7 +26,7 @@ import GreatScroll from "@/components/GreatScroll.vue"
 .non-hero-wrapper{
   padding:  75px 0;
 background-color: black;
-
+overflow-x: hidden;
 }
 
 .non-hero-wrapper section{
@@ -35,7 +35,11 @@ background-color: black;
 
 @media (min-width: 979px){
   .non-hero-wrapper{
-padding: 125px 0;
+    padding: 155px 0;
+  }
+  
+  .non-hero-wrapper section{
+    margin-bottom: 105px
   }
 }
 </style>

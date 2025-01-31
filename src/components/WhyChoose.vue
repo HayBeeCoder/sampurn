@@ -100,5 +100,13 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
     grid-template-columns: repeat(2, minmax(var(--auto-grid-min-size), 1fr));
     grid-gap: 1rem;
   }
+  .great-scroll-wrapper {
+  position: absolute;
+  transform: translateX(50%);
+  width: 400px;
+  left: 100%;
+  transform: rotate(45deg) translateX(-95%);
+  top: 5%;
+}
 }
 </style>

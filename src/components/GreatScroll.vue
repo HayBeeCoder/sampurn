@@ -14,6 +14,7 @@ width: 300px;
 
 @media ( min-width: 969px){
     .great-scroll{
+        width: 600px;
 
     }
 }
