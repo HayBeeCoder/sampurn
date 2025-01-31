@@ -20,7 +20,7 @@ function scrollTo(idOfElement: string) {
 <template>
   <header>
     <RouterLink to="/" class="logo-wrapper">
-      <img alt="Sampurn logo" class="logo" src="@/assets/sampurn-logo.png" width="140px" />
+      <img alt="Sampurn logo" class="logo" src="@/assets/sampurn-logo.png"  />
     </RouterLink>
 
     <HamBurger :toggleState="isOpen" v-on:update:toggleState="toggleisOpen()" />
@@ -67,6 +67,7 @@ footer{
 
 .logo {
   display: block;
+  width: 90px;
 }
 
 
@@ -177,6 +178,9 @@ nav a:last-child {
     /* margin: 0 2rem 0 0; */
   }
 
+  .logo {
+  width: 120px;
+}
   nav {
     position: relative;
     text-align: right;
