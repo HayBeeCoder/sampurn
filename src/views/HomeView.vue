@@ -10,6 +10,7 @@ import GreatScroll from "@/components/GreatScroll.vue"
 <template>
   <main>
     <TheHero />
+    <hr class="horizontal"/>
     <div class="non-hero-wrapper">
 
       <AboutUs />
@@ -29,6 +30,13 @@ import GreatScroll from "@/components/GreatScroll.vue"
 
 
 <style scoped>
+.horizontal{
+  height: 1px;
+  background: #421E00;
+  opacity: 1;
+  width: 100%;
+border: 0px;
+}
 .non-hero-wrapper {
   position: relative;
   padding: 75px 0;

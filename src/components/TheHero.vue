@@ -39,7 +39,7 @@
   align-items: center;
   gap: 25px;
 
-  border-bottom: 1px solid #FF7200;
+  /* border-bottom: 0.1em solid  ; */
 }
 
 .hero-logo {
@@ -75,19 +75,19 @@
     background-repeat: no-repeat;
     background-position: -40%;
     background-size: 100%;
-    justify-content: flex-end;
-    padding-bottom: 50px;
+    justify-content: center;
+    /* padding-bottom: 50px; */
   }
 }
 
 @media (min-width: 969px) {
 
 .hero-logo{
-  width: 700px;
+  width: 7;
 }
 
 .wrapper{
- justify-content: flex-end;
+ /* justify-content: flex-end; */
  /* padding: 50px; */
 }
 }

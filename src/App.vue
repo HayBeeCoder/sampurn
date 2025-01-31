@@ -54,7 +54,7 @@ header {
   max-height: 100vh;
   padding: 1rem 1rem;
 
-  border-bottom: 1px solid #ff7200;
+  border-bottom: 1px solid #A34900;
 }
 
 footer{
