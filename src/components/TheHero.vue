@@ -113,6 +113,7 @@ onMounted(() => {
   }
 
   .wrapper {
+    background-color: #A9663D;
     background-image: linear-gradient(
         -180deg,
         hsla(0, 0%, 8%, 0.3) 0%,
