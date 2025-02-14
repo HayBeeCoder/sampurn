@@ -4,6 +4,11 @@ import HamBurger from './components/HamBurger.vue'
 
 import { ref, } from 'vue'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+AOS.init();;
+
 const isOpen = ref<boolean>(false)
 
 function toggleisOpen() {

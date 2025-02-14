@@ -2,12 +2,18 @@
 const props = defineProps<{
   subHeading?: string
   heading?: string
-  id?: "faq" | "about"
+  id?: 'faq' | 'about'
 }>()
 </script>
 
 <template>
-  <section class="mat" :id="id">
+  <section
+    class="mat"
+    :id="id"
+    data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000"
+  >
     <h1 class="mat-heading amarante-regular" v-if="props.heading">{{ props.heading }}</h1>
     <h3 class="mat-subheading" v-if="props.subHeading">{{ props.subHeading }}</h3>
 
@@ -24,10 +30,11 @@ const props = defineProps<{
   /* background-position: 100% 100%; */
   background-size: 100% 100%;
   padding: 5rem 2em;
-  
+
   text-align: center;
   position: relative;
   letter-spacing: 0.02em;
+  z-index: 100;
 }
 
 .mat-heading {
@@ -52,7 +59,7 @@ const props = defineProps<{
 @media (min-width: 369px) {
 }
 @media (min-width: 768px) {
-  .mat{
+  .mat {
     padding: 4rem 6rem;
   }
 }
