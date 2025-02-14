@@ -2,6 +2,10 @@
 import MatTemplate from './MatTemplate.vue';
 import TheButton from './TheButton.vue';
 
+
+defineProps<{
+  toggleOnModal: () => void
+}>()
 type whyChooseUsItemType = {
   image?: string
   desc: string
@@ -26,12 +30,16 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
     desc: 'Live Mentorship <br/> Sessions',
   },
 
+
 ]
+
+
+
 </script>
 
 <template>
   <MatTemplate subHeading="Why Choose Us">
-  
+
     <div class="ancient-papers auto-grid">
       <div :key="key" v-for="(item, key) in whyChooseUsItems" class="ancient-paper">
         <span class="ancient-icon-wrapper">
@@ -40,7 +48,7 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
         <p class="ancient-text" v-html="item.desc"></p>
       </div>
     </div>
-    <TheButton>Enrol now</TheButton>
+    <TheButton @click="toggleOnModal">Enrol now</TheButton>
   </MatTemplate>
 
 </template>
@@ -110,6 +118,6 @@ const whyChooseUsItems: whyChooseUsItemType[] = [
     grid-gap: 1rem;
   }
 
-  
+
 }
 </style>
