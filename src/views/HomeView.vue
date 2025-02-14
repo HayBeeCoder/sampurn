@@ -7,14 +7,17 @@ import OurFaqs from '@/components/OurFaqs.vue'
 import GreatScroll from '@/components/GreatScroll.vue'
 import { ref, watch, type Ref } from 'vue'
 import ModalComponent from '@/components/ModalComponent.vue'
+import TheButton from '@/components/TheButton.vue'
 
 const isModalOpen: Ref<boolean> = ref(false)
 function onModal() {
   isModalOpen.value = true
 }
 
+function openExternalLink() {
+  window.open('https://tix.africa/starrxsampurn', '_blank')
+}
 watch(isModalOpen, (newValue) => {
-
   document.body.style.overflow = newValue ? 'hidden' : 'auto'
 })
 </script>
@@ -25,7 +28,13 @@ watch(isModalOpen, (newValue) => {
     <hr class="horizontal" />
     <div class="non-hero-wrapper">
       <AboutUs />
-      <div class="relative">
+      <div
+        class="relative z-infinity"
+        :style="{ zIndex: 1000000 }"
+        data-aos="fade-up-left"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <div class="great-scroll-wrapper">
           <GreatScroll />
         </div>
@@ -33,9 +42,18 @@ watch(isModalOpen, (newValue) => {
       <WhyChoose :toggleOnModal="onModal" />
       <OurFaqs />
     </div>
-    
+
     <ModalComponent v-if="isModalOpen" :toggleOffModal="() => (isModalOpen = false)">
-      <div @click="(e) => e.stopPropagation()">
+      <div @click="(e) => e.stopPropagation()" class="btns-wrapper">
+        <h1>Enrol for the class</h1>
+        <div class="btns-wrapper">
+
+          <TheButton @click="openExternalLink">
+            pay using Naira (₦)
+          </TheButton>
+
+        </div>
+
         <!-- <PaystackButton @payment-success="( ) => (isModalOpen = false)"/> -->
       </div>
     </ModalComponent>
@@ -51,14 +69,21 @@ watch(isModalOpen, (newValue) => {
   border: 0px;
 }
 
-.overflow- {
-  overflow-y: auto;
+.btns-wrapper{
+  text-align: center;
+}
 
+.overflow-y {
+  overflow-y: auto;
 }
 .no-overflow-y {
   overflow-y: hidden;
   height: 100vh;
 }
+.z-infinity {
+  z-index: 100000000;
+}
+
 .non-hero-wrapper {
   position: relative;
   padding: 75px 0;
