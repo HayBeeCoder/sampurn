@@ -5,11 +5,19 @@ import AboutUs from '@/components/AboutUs.vue'
 import WhyChoose from '@/components/WhyChoose.vue'
 import OurFaqs from '@/components/OurFaqs.vue'
 import GreatScroll from '@/components/GreatScroll.vue'
-import { ref, watch, type Ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch, type Ref } from 'vue'
 import ModalComponent from '@/components/ModalComponent.vue'
 import TheButton from '@/components/TheButton.vue'
+import CryptoAddressbanner from '@/components/CryptoAddressbanner.vue'
+import { useClipboard } from '@/composable/useClipboard'
 
-const isModalOpen: Ref<boolean> = ref(false)
+const isModalOpen: Ref<boolean> = ref(true)
+const showUSDTBtn = ref(true)
+const copy = ref(false)
+
+const ADDRESS = ref('TYG1ZpCd5GtmSotgzJEMVz4btB2arsPRWs')
+const { copyText } = useClipboard()
+
 function onModal() {
   isModalOpen.value = true
 }
@@ -17,13 +25,39 @@ function onModal() {
 function openExternalLink() {
   window.open('https://tix.africa/starrxsampurn', '_blank')
 }
+
 watch(isModalOpen, (newValue) => {
-  document.body.style.overflow = newValue ? 'hidden' : 'auto'
+  // document.body.style.overflow = newValue ? 'hidden' : 'auto'
+})
+
+function handleScroll(event: Event) {
+  if (!isModalOpen.value) {
+    event.preventDefault()
+  }
+}
+
+function toggleUSDTBtn() {
+  showUSDTBtn.value = false
+}
+
+function handleCopyClick(e: Event) {
+  if (copy.value) {
+    e.preventDefault()
+  }
+  copyText(ADDRESS.value, copy)
+}
+
+onMounted(() => {
+  document.body.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  document.body.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <template>
-  <main :class="isModalOpen ? 'no-overflow-y' : 'overflow-y'">
+  <main>
     <TheHero :toggleOnModal="onModal" />
     <hr class="horizontal" />
     <div class="non-hero-wrapper">
@@ -43,18 +77,26 @@ watch(isModalOpen, (newValue) => {
       <OurFaqs />
     </div>
 
-    <ModalComponent v-if="isModalOpen" :toggleOffModal="() => (isModalOpen = false)">
-      <div @click="(e) => e.stopPropagation()" class="btns-wrapper">
-        <h1>Enrol for the class</h1>
+    <ModalComponent
+      v-if="isModalOpen"
+      :toggleOffModal="
+        () => {
+          isModalOpen = false
+          showUSDTBtn = true
+          copy = false
+        }
+      "
+    >
+      <div @click="(e) => e.stopPropagation()">
+        <h1 :style="{ textAlign: 'center' }">Enrol for the class</h1>
         <div class="btns-wrapper">
+          <TheButton @click="openExternalLink"> pay using Naira (₦) </TheButton>
 
-          <TheButton @click="openExternalLink">
-            pay using Naira (₦)
-          </TheButton>
-
+          <TheButton @click="toggleUSDTBtn" v-if="showUSDTBtn"> pay using USDT </TheButton>
         </div>
-
-        <!-- <PaystackButton @payment-success="( ) => (isModalOpen = false)"/> -->
+        <CryptoAddressbanner :copy="copy" v-if="!showUSDTBtn" @click="handleCopyClick">
+          {{ ADDRESS }}
+        </CryptoAddressbanner>
       </div>
     </ModalComponent>
   </main>
@@ -69,8 +111,14 @@ watch(isModalOpen, (newValue) => {
   border: 0px;
 }
 
-.btns-wrapper{
+.btns-wrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 75vw;
+  margin: 0 auto 1.4em;
+  max-width: 400px;
 }
 
 .overflow-y {
