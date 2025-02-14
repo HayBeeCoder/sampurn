@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TheHero from '@/components/TheHero.vue'
-
 import AboutUs from '@/components/AboutUs.vue'
 import WhyChoose from '@/components/WhyChoose.vue'
 import OurFaqs from '@/components/OurFaqs.vue'
@@ -15,7 +14,10 @@ const isModalOpen: Ref<boolean> = ref(true)
 const showUSDTBtn = ref(true)
 const copy = ref(false)
 
-const ADDRESS = ref('TYG1ZpCd5GtmSotgzJEMVz4btB2arsPRWs')
+
+
+// insert USDT address into below 
+const ADDRESS = ref('')
 const { copyText } = useClipboard()
 
 function onModal() {
@@ -27,7 +29,9 @@ function openExternalLink() {
 }
 
 watch(isModalOpen, (newValue) => {
-  // document.body.style.overflow = newValue ? 'hidden' : 'auto'
+  document.documentElement.style.overflow = newValue ? 'hidden':''; // Prevent scrolling on the entire page
+
+  document.body.style.overflow = newValue ? 'hidden' : ''
 })
 
 function handleScroll(event: Event) {
@@ -176,7 +180,7 @@ onBeforeUnmount(() => {
 .great-scroll-wrapper {
   position: absolute;
   width: 200px;
-  z-index: 500;
+  z-index: 200;
   /* top: 5%; */
   transform: rotate(45deg) translate(15%, 65%) scale(180%);
   right: -15%;
